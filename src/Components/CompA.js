@@ -2,8 +2,8 @@ import { useSelector,useDispatch } from "react-redux";
 import { incNum,decNum } from "../Actions/DefActions";
 
 const CompA = () => {
-  const myState = useSelector((state)=>state.changeNum)   //passing the action using UseSelector hook
-  const dispatch =useDispatch()
+  const myState = useSelector((state)=>state.changeNum)   //Allows you to extract data from the Redux store state and passing to react components
+  const dispatch =useDispatch()                     //used to dispatch an action
 
   return (
     <div className="Container">
