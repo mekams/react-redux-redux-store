@@ -1,4 +1,3 @@
-import React, {  } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { incNum,decNum } from "../Actions/DefActions";
 
@@ -15,7 +14,7 @@ const CompA = () => {
 
         <button onClick={()=>dispatch(decNum())} className="btn">Dec - </button>
 
-        <input type="text"  value = {myState} />
+        <input type="text" readOnly={true} value = {myState} />
 
         <button onClick={()=>dispatch(incNum(2))} className="btn">Inc + </button>
       </div>
