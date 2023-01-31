@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Store from "./Store";               //store created imported here from store file
+import { Provider } from "react-redux";   //store data provider
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+Store.subscribe(() => console.log(Store.getState()));     //getting state  printed iin console
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store ={Store}>        {/*store wrapped in provider and passing the complete store as prop */}
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
